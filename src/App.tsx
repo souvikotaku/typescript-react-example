@@ -76,11 +76,28 @@ const App = () => {
     console.log("hellow");
   }, []);
 
+  const onClick = (test: string) => {
+    return 5;
+  };
+
   return (
     <div className="App">
       <span className="heading">Taskify</span>
-      <Inputfield todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <Todolist todos={todos} />
+      <Inputfield
+        todo={todo}
+        setTodo={setTodo}
+        handleAdd={handleAdd}
+        onClick={onClick}
+      >
+        Go
+      </Inputfield>
+      <Todolist
+        todos={todos}
+        randomObject={{
+          age1: 33,
+          age2: 34,
+        }}
+      />
       {/* {todos.map((item, index) => (
         <p>{item?.todo}</p>
       ))} */}

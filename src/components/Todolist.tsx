@@ -4,9 +4,11 @@ import "./styles.css";
 
 interface Props {
   todos: Todo[];
+  randomObject: Record<string, number>;
 }
 
-const Todolist = ({ todos }: Props) => {
+const Todolist = ({ todos, randomObject }: Props) => {
+  console.log("randomObject", randomObject);
   return (
     <div className="todos">
       {" "}

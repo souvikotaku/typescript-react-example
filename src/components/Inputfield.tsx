@@ -5,9 +5,11 @@ interface Props {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
   handleAdd: (e: React.FormEvent) => void;
+  onClick: (test: string) => number;
+  children: React.ReactNode;
 }
 
-const Inputfield = ({ todo, setTodo, handleAdd }: Props) => {
+const Inputfield = ({ todo, setTodo, handleAdd, onClick, children }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
     <form
@@ -28,7 +30,7 @@ const Inputfield = ({ todo, setTodo, handleAdd }: Props) => {
         }}
       />
       <button className="input_submit" type="submit">
-        Go
+        {children}
       </button>
     </form>
   );
